@@ -13,34 +13,12 @@ El sitio web será un Marketplace de productos artesanales, pensado para vendedo
 - Carrito de compras
 - Lista de deseos
 
-## Público objetivo
-
 ## Referencias
+
+Sitios web tomados como referencia
 
 - [Natura](https://www.natura.com.mx/)
 - [Naturitas](https://www.naturitas.mx/)
 - [Amazon](https://www.amazon.com.mx/)
 - [Nicepage plantilla](https://nicepage.com/es/website-design/preview/belleza-simplicidad-de-la-naturaleza-80962?device=desktop)
 - [Nature and culture](https://www.natureandculture.org/es/)
-
-## Categorías
-
-- Alimentación
-  - Bebidas
-  - Comidas
-- Cuidado personal
-  - Cremas
-  - Shampoos
-  - Jabón
-- Perfumería
-- Maquillaje
-
-## Diseño
-
-### Wireframe
-
-### Diseño gráfico
-
--- Agregar "cantidad disponible" a la BD (productos)
--- Agregar "barra de busqueda"a "detalles del producto" y agregar algun especie de barra de navegación
-"Reanudar búsqueda: [búsqueda]"
