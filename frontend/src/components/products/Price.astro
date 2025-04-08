@@ -1,0 +1,17 @@
+---
+interface Props {
+  price:number
+}
+const {
+  price
+} = Astro.props;
+---
+<p class="price">
+  <data value={price}>${price}</data>  
+</p>
+
+<style>
+  .price{
+    
+  }
+</style>

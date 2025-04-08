@@ -1,0 +1,38 @@
+---
+interface Props {
+  name:string,
+  type:"text"|"number"|"password"|"email",
+  placeholder:string
+}
+const {
+  name,
+  type,
+  placeholder
+} = Astro.props;
+---
+<label for={name}>
+  <slot />
+  <input class="in" type={type} id={name} placeholder={placeholder} required>
+</label>
+<style>
+  label,input{
+    display: block;
+  }
+  label{
+    margin-bottom:2ch;
+  }
+  input.in{
+    width: 100%;
+    height: ;
+    width: 100%;
+    height: 5.4ch;
+    border-radius: 10px;
+    padding-left: 1ch;
+    border:2px solid transparent;
+    transition: border-color 200ms ease-in-out;
+  }
+  input.in:focus, input.in:active{
+    outline: none;
+    border-color:var(--blue);
+  }
+</style>

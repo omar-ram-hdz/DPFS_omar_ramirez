@@ -1,0 +1,21 @@
+---
+import Imagotipo from '@assets/imagotipo.svg'
+import Colors from '@/styles/Colors'
+---
+<header class="head-bar">
+  <a href="/">
+    <Imagotipo color={Colors.white} height="90" width="250"/>
+  </a>
+</header>
+<style>
+  .head-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+</style>

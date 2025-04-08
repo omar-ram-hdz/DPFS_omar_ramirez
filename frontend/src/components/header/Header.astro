@@ -1,0 +1,40 @@
+---
+import Imagotipo from '@assets/imagotipo.svg'
+import Colors from '@/styles/Colors'
+import SearchBar from '../search/SearchBar.astro'
+import Anchor from '../site/Anchor.astro'
+---
+<header class="head-bar">
+  <a href="/">
+    <Imagotipo color={Colors.white} height="90" width="250"/>
+  </a>
+  <SearchBar/>
+  <nav class="navbar">
+    <ul>
+      <li>
+        <Anchor href='/login'>Iniciar sesión</Anchor>
+      </li>
+      <li>
+        <Anchor href='/register'>Crear cuenta</Anchor>
+      </li>
+    </ul>
+  </nav>
+</header>
+<style>
+  .head-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .navbar ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2ch;
+  }
+</style>

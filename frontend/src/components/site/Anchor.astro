@@ -1,0 +1,33 @@
+---
+interface Props {
+  href:string,
+  target?:string,
+}
+const {
+  href,
+  target = "_self",
+} = Astro.props;
+---
+
+<a href={href} target={target} class="link">
+  <slot/>
+</a>
+
+<style>
+  .link{
+    color: var(--red);
+    font-size: 1.5em;
+    transition: opacity 100ms ease-in, color 100ms ease-in-out, text-decoration 100ms ease-in-out;
+    text-decoration: none;
+  }
+  .link:visited{
+    color: var(--red);
+  }
+  .link:hover{
+    opacity: 0.7;
+  }
+  .link:active{
+    color: var(--white);
+    text-decoration: underline;
+  }
+</style>

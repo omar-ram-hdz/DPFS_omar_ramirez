@@ -1,0 +1,38 @@
+---
+interface Props {
+  type?:"button"|"reset"|"submit",
+  className?:string
+  hasFull:boolean,
+}
+const {
+  type = "button",
+  hasFull=false,
+  className=""
+} = Astro.props;
+const styles = hasFull ? className + "btn btn-fill" : className + "btn";
+---
+
+<button class={styles} type={type}>
+  <slot />
+</button>
+<style>
+  .btn{
+    background-color:var(--red);
+    color: var(--white);
+    font-size: 1.2em;
+    padding: 6px 20px;
+    transition: opacity 0.1s ease-in-out, background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    border: 2px solid var(--red);
+    border-radius: 10px;
+  }
+  .btn:hover{
+    opacity: 0.8;
+  }
+  .btn:active{
+    background-color: var(--white);
+    color: var(--red);
+  }
+  button.btn-fill{
+    width: 100%;
+  }
+</style>

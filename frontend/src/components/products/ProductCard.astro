@@ -1,0 +1,60 @@
+---
+import Rating from "./Rating.astro";
+import Price from "./Price.astro";
+import Button from "../site/Button.astro";
+interface Props {
+  id:string
+  src:string,
+  nombre:string,
+  rating:number,
+  price:number,
+}
+const {
+  id,
+  src,
+  nombre,
+  rating,
+  price
+} = Astro.props;
+---
+
+<article class="product-card">
+  <figure class="">
+    <img src={src} alt={nombre} width="240" height="220">
+    <figcaption>
+      <a href={`/producto/${id}`}>
+        <h3>{nombre}</h3>
+      </a>
+      <Rating rating={rating}/>
+      <Price price={price}/>
+      <Button>Agregar al carrito</Button>
+    </figcaption>
+  </figure>
+</article>
+
+<style>
+  a{
+    color: var(--white);
+    transition: text-decoration 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  a:hover{
+    color: var(--yellow);
+  }
+  a:active{
+    color: var(--yellow);
+    text-decoration: underline;
+  }
+  .product-card{
+    max-width: 240px;
+    background-color: var(--green);
+    border:1.5px solid gray;
+    overflow: hidden;
+  }
+  .product-card img{
+    object-fit: cover;
+    object-position: center;
+  }
+  .product-card figcaption{
+    padding: 4px;
+  }
+</style>

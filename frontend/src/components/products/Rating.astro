@@ -1,0 +1,69 @@
+---
+interface Props {
+  rating:number,
+}
+import getRatingText from "@utils/getRatingText";
+const {
+  rating = 0.0
+} = Astro.props;
+const ratingText = getRatingText(rating); 
+---
+<div>
+  <meter value={rating} min="0" max="5" title={ratingText} hidden>{ratingText}</meter>
+  <div class="rating-info">
+    <div class="rating-stars" aria-hidden="true" data-rating={rating}>
+      <span class="star" title="Estrella 1"></span>
+      <span class="star" title="Estrella 2"></span>
+      <span class="star" title="Estrella 3"></span>
+      <span class="star" title="Estrella 4"></span>
+      <span class="star" title="Estrella 5"></span>
+    </div>
+    <span class="rating-value">{ratingText}</span>
+  </div>
+</div>
+<script>
+  const drawStar = (star:any,fill:boolean) => {
+    if(fill){
+      star.classList.add("star-fill");
+      star.title=`${star.title} (llena)`
+    }else{
+      star.classList.add("star-empty")
+      star.title=`${star.title} (vacía)`
+    }
+  }
+  const $ratingStars = document.querySelectorAll("div.rating-stars");
+  $ratingStars.forEach((el)=>{
+    const absoluteRating = Math.floor(Number(el.getAttribute("data-rating")) || 0);
+    const $stars = el.querySelectorAll(".star");
+    $stars.forEach((el,i) => (i+1)<= absoluteRating?drawStar(el,true):drawStar(el,false))
+  });
+</script>
+<style>
+  .rating-stars{
+    display: flex;
+    align-items: center;
+  }
+  .rating-info{
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+  }
+  .star{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .rating-value{
+    font-size: 1.3ch;
+    color:#000000a0;
+  }
+  .star.star-fill{
+    background-image: url("/images/star-fill.svg");
+  }
+  .star.star-empty{
+    background-image: url("/images/star.svg");
+  }
+</style>
