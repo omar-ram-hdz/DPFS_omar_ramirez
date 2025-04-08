@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '@/components/header/Header.astro';
+import ProductCard from '@/components/products/ProductCard.astro';
+---
+
+<Layout title='Amantoli - Productos artesanales - Precios accesibles | Inicio'>
+  <Header />
+  <main>
+    <section class="bg-blue">
+      <h2>Productos destacados</h2>
+      <div class="product-box">
+        <ProductCard id='ola' src='https://m.media-amazon.com/images/I/61Q8xnIitvL.jpg' nombre='Producto ejemplo sjjs' rating={4.5} price={100.50}/>
+        <ProductCard id='ola' src='https://m.media-amazon.com/images/I/61Q8xnIitvL.jpg' nombre='Producto ejemplo sjjs' rating={4.5} price={100.50}/>
+        <ProductCard id='ola' src='https://m.media-amazon.com/images/I/61Q8xnIitvL.jpg' nombre='Producto ejemplo sjjs' rating={4.5} price={100.50}/>
+        <ProductCard id='ola' src='https://m.media-amazon.com/images/I/61Q8xnIitvL.jpg' nombre='Producto ejemplo sjjs' rating={4.5} price={100.50}/>
+        <ProductCard id='ola' src='https://m.media-amazon.com/images/I/61Q8xnIitvL.jpg' nombre='Producto ejemplo sjjs' rating={4.5} price={100.50}/>
+        <ProductCard id='ola' src='https://m.media-amazon.com/images/I/61Q8xnIitvL.jpg' nombre='Producto ejemplo sjjs' rating={4.5} price={100.50}/>
+      </div>
+    </section>
+    <div class="colors">
+        <span class="black">black</span>
+        <span class="red">red</span>
+        <span class="yellow">yellow</span>
+        <span class="green">green</span>
+        <span class="blue">blue</span>
+        <span class="white">white</span>
+    </div>
+  </main>
+  <footer></footer>
+</Layout>
+
+<style>
+  main section:first-of-type{
+    padding-top:150px;
+  }
+  section{
+    padding: 8px 200px; 
+    padding-bottom: 50px;
+  }
+  .product-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .colors{
+    display: flex;
+    justify-content: center;
+  }
+  .colors span{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bg-blue{
+    background-color: var(--blue);
+  }
+  .black{
+    background-color:var(--black);
+  }
+  .red{
+    background-color:var(--red);
+  }
+  .yellow{
+    background-color:var(--yellow);
+  }
+  .green{
+    background-color:var(--green);
+  }
+  .blue{
+    background-color:var(--blue);
+  }
+  .white{
+    background-color:var(--white);
+    color: var(--black);
+  }
+</style>

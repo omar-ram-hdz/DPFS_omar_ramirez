@@ -1,0 +1,53 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import HeaderLogo from "@/components/header/HeaderLogo.astro";
+import Button from "@/components/site/Button.astro";
+import Input from "@/components/site/Input.astro";
+import Anchor from "@/components/site/Anchor.astro";
+---
+<Layout title="Iniciar sesión en Amantoli - Productos artesanales a precios accesibles">
+  <HeaderLogo/>
+  <main>
+    <form action="/users" method="get">
+      <h1>Iniciar sesión</h1>
+      <Input
+        name="email"
+        type="email"
+        placeholder="correo@ejemplo.com"
+      >
+        Correo:
+      </Input>
+      <Input
+        name="password"
+        type="password"
+        placeholder="hola1234"
+      >
+        Contraseña:
+      </Input>
+      <Button type="submit" hasFull={true}>Iniciar sesión</Button>
+      <p>¿Aún no tienes cuenta? <Anchor href="/register">Crear cuenta</Anchor></p>
+    </form>
+  </main>
+</Layout>
+
+<style>
+  main{
+    padding: 200px 200px;
+    color: var(--black);
+  }
+  h1{
+    color: var(--red);
+    margin-bottom: 1ch;
+  }
+  form{
+    margin: auto;
+    max-width: 600px;
+    padding: 40px 20px;
+    background-color: var(--backWhite);
+    border-radius: 10px;
+  }
+  form p{
+    margin-top: 1ch;
+    text-align: center;
+  }
+</style>

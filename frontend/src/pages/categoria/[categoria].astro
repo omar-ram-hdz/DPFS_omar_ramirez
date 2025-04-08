@@ -1,0 +1,17 @@
+---
+export const prerender = true
+export function getStaticPaths() {
+  return [
+    { params: { categoria: "cuero" }},
+    { params: { categoria: "tela" }},
+    { params: { categoria: "barro" }},
+    { params: { categoria: "arcilla" }},
+    { params: { categoria: "madera" }},
+  ];
+}
+import Layout from "@/layouts/Layout.astro";
+const {categoria} = Astro.params
+---
+<Layout title={`Productos hechos con ${categoria} | Amantoli - Productos artesanales - Precios accesibles`}>
+  <h1>{categoria}</h1>
+</Layout>
